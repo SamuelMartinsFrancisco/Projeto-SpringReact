@@ -1,0 +1,3 @@
+ - yarn create vite frontend --template react-ts
+ 
+ - ctrl + d -> exemplo: seleciona todos os atributos className de uma vez
