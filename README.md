@@ -1,3 +1,3 @@
-# Semana - Spring React
+# Semana - Spring React (incompleto)
 
-Projeto desenvolvido durante o evento "Semana Spring React", da escola de programação DevSuperior.
+Projeto parcialmente desenvolvido durante o evento "Semana Spring React", da escola de programação DevSuperior.
