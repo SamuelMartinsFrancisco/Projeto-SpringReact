@@ -1,4 +1,5 @@
-import { useState } from "react";
+import axios from 'axios';
+import { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import NotificationButton from '../NotificationButton';
 import './styles.css';
@@ -10,6 +11,16 @@ function SalesCard() {
 
     const [minDate, setMinDate] = useState(min);
     const [maxDate, setMaxDate] = useState(max);
+
+    const axiosMinDate = `${minDate.getFullYear()}-${minDate.getMonth() < 10 ? "0" + minDate.getMonth() : minDate.getMonth()}-${minDate.getDay() < 10 ? "0" + minDate.getDay() : minDate.getDay()}`;
+    const axiosMaxDate = `${maxDate.getFullYear()}-${maxDate.getMonth() < 10 ? "0" + maxDate.getMonth() : maxDate.getMonth()}-${maxDate.getDay() < 10 ? "0" + maxDate.getDay() : maxDate.getDay()}`;
+
+    useEffect(() => {
+        axios.get(`http://localhost:8080/sales?minDate=${axiosMinDate}&maxDate=${axiosMaxDate}`)
+             .then(response => {
+                console.log(response.data);
+             });
+    }, []);
 
     return (
         <>
